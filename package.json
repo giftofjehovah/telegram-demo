@@ -1,0 +1,24 @@
+{
+  "name": "telegram-wrapper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^1.9.2",
+    "telegram-node-bot": "^3.0.10"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finalight/telegram-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/finalight/telegram-demo/issues"
+  },
+  "homepage": "https://github.com/finalight/telegram-demo#readme",
+  "description": ""
+}

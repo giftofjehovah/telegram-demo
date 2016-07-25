@@ -32,7 +32,7 @@ class FormController extends TelegramBaseController {
         }
 
         $.runForm(form, (result) => {
-            console.log(result)
+            $.sendMessage("Name is " + result.name + ". Age is " + result.age)
         })
     }
 

@@ -22,8 +22,10 @@ class FormController extends TelegramBaseController {
                 q: 'Send me your age',
                 error: 'sorry, wrong input',
                 validator: (message, callback) => {
-                    if(message.text && IsNumeric(message.text)) {
-                        callback(true, toInt(message.text))
+                    console.log(Number.isInteger(message.text))
+                    if(message.text && Number.isInteger(Number(message.text))) {
+                        
+                        callback(true, Number(message.text))
                         return
                     }
                     callback(false)
@@ -33,12 +35,13 @@ class FormController extends TelegramBaseController {
 
         $.runForm(form, (result) => {
             $.sendMessage("Name is " + result.name + ". Age is " + result.age)
+            //return
         })
     }
 
     get routes() {
         return {
-            'form': 'formHandler'
+            '/form': 'formHandler'
         }
     }
 }

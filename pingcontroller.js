@@ -10,7 +10,7 @@ class PingController extends TelegramBaseController {
 
     get routes() {
         return {
-            'ping': 'pingHandler'
+            '/ping': 'pingHandler'
         }
     }
 }

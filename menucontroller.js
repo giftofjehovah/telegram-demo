@@ -31,7 +31,7 @@ class MenuController extends TelegramBaseController {
 
     get routes() {
         return {
-            'menu': 'menuHandler'
+            '/menu': 'menuHandler'
         }
     }
 }

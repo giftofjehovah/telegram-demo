@@ -41,7 +41,7 @@ class InlineMenuController extends TelegramBaseController {
 
     get routes() {
         return {
-            'inline': 'inlineMenuHandler'
+            '/inline': 'inlineMenuHandler'
         }
     }
 }

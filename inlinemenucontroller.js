@@ -4,6 +4,10 @@ class InlineMenuController extends TelegramBaseController {
     /**
      * @param {Scope} $
      */
+
+    callbackQuery(message){
+        console.log(message);
+    }
     inlineMenuHandler($) {
        $.runInlineMenu({
             layout: 2, //some layouting here
@@ -13,31 +17,24 @@ class InlineMenuController extends TelegramBaseController {
                 {
                     text: '1', //text of the button
                     callback: (callbackQuery, message) => { //to your callback will be passed callbackQuery and response from method
-                        console.log(1)
+                        console.log(message)
+                        $.sendMessage("you've selected ")
+                        console.log(callbackQuery)
                     }
                 },
                 {
                     text: 'Exit',
                     message: 'Are you sure?',
                     layout: 2,
-                    menu: [ //Sub menu (current message will be edited)
-                        {
-                            text: 'Yes!',
-                            callback: () => {
-
-                            }
-                        },
-                        {
-                            text: 'No!',
-                            callback: () => {
-
-                            }
-                        }
-                    ]
+                    oneTimeKeyboard: true,
+                    callback: (callbackQuery, message) => {
+                        $.sendMessage("exiting...")
+                    }
                 }
             ]
         })
     }
+
 
     get routes() {
         return {

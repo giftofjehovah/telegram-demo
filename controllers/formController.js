@@ -1,4 +1,4 @@
-const TelegramBaseController = require('./base.js')
+const TelegramBaseController = require('../base.js')
 
 class FormController extends TelegramBaseController {
     /**

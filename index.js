@@ -2,13 +2,13 @@
 const Telegram = require('telegram-node-bot')
 
 const TelegramBaseController = Telegram.TelegramBaseController
-const PingController = require('./pingcontroller.js')
-const FormController = require('./formcontroller.js')
-const MenuController = require('./menucontroller.js')
-const InlineMenuController = require('./inlinemenucontroller.js')
-const InlineModeController = require('./inline_mode_controller.js')
-//const CallbackQueryController = require('./inline_menu_controller.js')
-const LocationController = require('./location_controller.js')
+const PingController = require('./controllers/pingController.js')
+const FormController = require('./controllers/formController.js')
+const MenuController = require('./controllers/menuController.js')
+const InlineMenuController = require('./controllers/inlineMenuController.js')
+ const InlineModeController = require('./controllers/inlineModeController.js')
+//const CallbackQueryController = require('./controllers/inline_menu_controller.js')
+const LocationController = require('./controllers/locationController.js')
 
 //Testing12345689bot
 const tg = new Telegram.Telegram('221690595:AAFe3vJiFboEyBqB98R2lE1G40GjGQTdHcM')

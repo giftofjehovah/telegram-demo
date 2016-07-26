@@ -4,6 +4,31 @@ class MenuController extends TelegramBaseController {
     /**
      * @param {Scope} $
      */
+
+    locationHandler($){
+        function createCinemaListInlineKeyboardMarkup (cinemas) {
+          return JSON.stringify({
+            inline_keyboard: cinemas.map(function (cinema) {
+              return [{
+                text: `${cinema.brand} ${cinema.name}`,
+                callback_data: '${cinema.brand}:'
+              }];
+            })
+          });
+        }
+
+        var cinemas = [{brand : "aha", name: "hoho"}]
+        var options = {
+          parse_mode: 'Markdown',
+          disable_web_page_preview: true,
+          reply_markup: createCinemaListInlineKeyboardMarkup(cinemas)
+        };
+        $.sendMessage("lol", options);
+
+
+    }
+
+
     menuHandler($) {
         $.runMenu({
             message: 'Select an option:',
@@ -31,7 +56,8 @@ class MenuController extends TelegramBaseController {
 
     get routes() {
         return {
-            '/menu': 'menuHandler'
+            '/menu': 'menuHandler',
+            '/location': 'locationHandler'
         }
     }
 }

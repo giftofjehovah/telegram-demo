@@ -4,22 +4,23 @@ class InlineMenuController extends TelegramBaseController {
     /**
      * @param {Scope} $
      */
+   
 
     callbackQuery(message){
-        console.log(message);
+      //  console.log(message);
     }
+
     inlineMenuHandler($) {
        $.runInlineMenu({
-            layout: 2, //some layouting here
+            layout: 1, //some layouting here
             method: 'sendMessage', //here you must pass the method name
-            params: ['text'], //here you must pass the parameters for that method
+            params: ['asdas'], //here you must pass the parameters for that method
             menu: [
                 {
-                    text: '1', //text of the button
+                    text: 'bulldozer', //text of the button
                     callback: (callbackQuery, message) => { //to your callback will be passed callbackQuery and response from method
-                        console.log(message)
-                        $.sendMessage("you've selected ")
-                        console.log(callbackQuery)
+                       // $.sendMessage("you've selected bulldoze", {disable_notification: false})
+                         $.api.answerCallbackQuery(callbackQuery.id, { text: 'You have selected bulldozer', show_alert: false })
                     }
                 },
                 {
